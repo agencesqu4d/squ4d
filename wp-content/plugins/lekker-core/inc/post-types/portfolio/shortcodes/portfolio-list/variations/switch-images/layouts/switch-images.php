@@ -1,0 +1,19 @@
+<?php
+$portfolio_list_simple_layout = get_post_meta( get_the_ID(), 'qodef_portfolio_list_simple_layout', true );
+?>
+<article <?php post_class( $item_classes ); ?>>
+	<div class="qodef-e-inner" <?php qode_framework_inline_style( $this_shortcode->get_list_item_style( $params ) ) ?>>
+		
+		<?php if ( $portfolio_list_simple_layout == 'yes' ) { ?>
+			<div class="qodef-e-content">
+				<?php lekker_core_list_sc_template_part( 'post-types/portfolio/shortcodes/portfolio-list', 'post-info/category', '', $params ); ?>
+				<?php lekker_core_list_sc_template_part( 'post-types/portfolio/shortcodes/portfolio-list', 'post-info/title', '', $params ); ?>
+				<?php lekker_core_list_sc_template_part( 'post-types/portfolio/shortcodes/portfolio-list', 'post-info/read-more', '', $params ); ?>
+			</div>
+		<?php } else { ?>
+			<div class="qodef-e-image">
+				<?php lekker_core_list_sc_template_part( 'post-types/portfolio/shortcodes/portfolio-list', 'post-info/image-switch', '', $params ); ?>
+			</div>
+		<?php } ?>
+	</div>
+</article>

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-list.qodef-item-layout--info-on-side {
+	
+	article{
+		
+		.qodef-e-media-image {
+			clip-path: inset(0 0 0 0);
+			-webkit-clip-path: inset(0 0 0 0);
+			transition: .4s cubic-bezier(.13,.43,0,.94);
+		}
+		
+		&:hover {
+			.qodef-e-media-image {
+				clip-path: inset(30px 30px 30px 30px);
+				-webkit-clip-path: inset(30px 30px 30px 30px);
+			}
+			
+			.qodef-e-content-inner{
+				opacity: 1;
+				clip-path: inset(0 0 0 0);
+				-webkit-clip-path: inset(0 0 0 0);
+				transition: .5s cubic-bezier(0.24, 0.12, 0, 1.07);
+			}
+		}
+	}
+	
+	.qodef-e-content {
+		position: absolute;
+		bottom: 47px;
+		left: -5px;
+	}
+	
+	.qodef-e-content-inner {
+		display: flex;
+		align-items: baseline;
+		transform: rotate(-90deg) translate(-11%, 102%);
+		transform-origin: left bottom;
+		opacity: 0;
+		transition: .3s cubic-bezier(0, 0.96, 0.25, 1);
+		clip-path: inset(0 100% 0 0);
+		-webkit-clip-path: inset(0 100% 0 0);
+		
+		* {
+			z-index: 1;
+		}
+		
+		.qodef-e-info-category {
+			@include qodefHeadingStyle(h5);
+			font-weight: 400;
+			
+			&:before{
+				content: '/';
+				margin: 0 5px 0 7px;
+			}
+			
+			a {
+				color: inherit;
+			}
+		}
+		
+		.qodef-e-title {
+			
+			a {
+				color: inherit;
+			}
+		}
+	}
+}

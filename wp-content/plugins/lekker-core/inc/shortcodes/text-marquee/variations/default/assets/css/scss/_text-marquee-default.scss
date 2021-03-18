@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Text Marquee shortcode styles
+   ========================================================================== */
+
+.qodef-text-marquee {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-content {
+		display: flex;
+		white-space: nowrap;
+		font-size: 135px;
+		font-family: $heading-font;
+		line-height: 1em;
+		font-weight: 700;
+		overflow: visible;
+		letter-spacing: 0px !important;
+	}
+	
+	.qodef-marquee-element {
+		padding: 0 25px;
+		will-change: transform;
+	}
+	
+	.qodef-m-text > span:after {
+		content: '\00b7';
+		display: inline-block;
+		padding: 0 28px;
+		color: $main-color;
+	}
+	
+	.qodef-m-text--1 {
+		text-stroke: 1px $main-color;
+		-webkit-text-stroke: 1px $main-color;
+		color: transparent;
+		-webkit-text-fill-color:  transparent;
+		letter-spacing: .001em;
+
+		.qodef-browser--ms-explorer & {
+			color: $main-color;
+		}
+	}
+	
+	.qodef-m-text--2 {
+		text-stroke: 1px $main-color;
+		-webkit-text-stroke: 1px $main-color;
+		color: transparent;
+		-webkit-text-fill-color:  transparent;
+		letter-spacing: .001em;
+
+		.qodef-browser--ms-explorer & {
+			color: $main-color;
+		}
+	}
+	
+	.qodef-m-text--3 {
+		text-stroke: 1px $main-color;
+		-webkit-text-stroke: 1px $main-color;
+		color: transparent;
+		-webkit-text-fill-color:  transparent;
+
+		.qodef-browser--ms-explorer & {
+			color: $main-color;
+		}
+	}
+}

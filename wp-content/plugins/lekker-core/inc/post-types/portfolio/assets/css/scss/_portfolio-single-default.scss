@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Portfolio Single styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+	
+	.qodef-portfolio-title {
+		margin: 0 0 25px;
+	}
+	
+	.qodef-portfolio-info {
+		
+		> * {
+			display: flex;
+			align-items: center;
+			margin-bottom: 8px;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		
+		.qodef-e-title {
+			margin: 0 5px 0 0;
+		}
+		
+		p, a {
+			margin: 0;
+			color: $text-color;
+
+			&:hover {
+				color: $main-color;
+			}
+		}
+		
+		.qodef-e-category {
+			
+			&:after {
+				content: ",";
+				margin: 0 0 0 -2px;
+			}
+			
+			&:last-child:after {
+				display: none;
+			}
+		}
+		
+		.qodef-e-tag {
+			
+			&:after {
+				content: ",";
+				margin: 0 0 0 -2px;
+			}
+			
+			&:last-child:after {
+				display: none;
+			}
+		}
+		
+		.qodef-social-share {
+			display: flex;
+			margin-top: 5px;
+		}
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		background-color: #fff;
+		width: 75px !important;
+		height: 75px !important;
+
+		.qodef-swiper-lines {
+			position: absolute;
+			top: 14px;
+		}
+	}
+	.swiper-button-prev {
+		left: 0 !important;
+
+	}
+	.swiper-button-next {
+		right: 0 !important;
+
+	}
+}

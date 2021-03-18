@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Portfolio List shortcode variation hover styles
+   ========================================================================== */
+
+.qodef-team-list.qodef-item-layout--info-follow {
+	
+	.qodef-e-inner {
+		overflow: hidden;
+		
+		.qodef-e-image {
+			transform: scale(1);
+			transition: .4s cubic-bezier(0.22, 0.12, 0, 0.8);
+			backface-visibility: hidden;
+		}
+		
+		&:hover .qodef-e-image {
+			transform: scale(1.05);
+		}
+	}
+	
+	.qodef-e-content {
+		display: none;
+	}
+}
+
+.qodef-follow-info-holder {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+	pointer-events: none;
+	visibility: hidden;
+	transition: transform 0.3s ease;
+	
+	&.qodef-right {
+		text-align: right;
+		transform: translateX(-100%);
+		
+		.qodef-follow-info-role {
+			top: 7px;
+			left: unset;
+			right: 10px;
+		}
+	}
+	
+	.qodef-follow-info-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.qodef-follow-info-title {
+		display: inline-block;
+		position: relative;
+		color: $heading-color;
+		background-color: #fff;
+		white-space: nowrap;
+		z-index: 8;
+		-webkit-clip-path: inset(0 100% 0 0);
+		clip-path: inset(0 100% 0 0);
+		padding: 12px 23px 15px;
+		
+		a {
+			color: inherit;
+		}
+		
+		> * {
+			margin: 0;
+		}
+	}
+	
+	.qodef-follow-info-role {
+		display: inline-block;
+		@include qodefHeadingStyle(h6);
+		padding: 4px 12px;
+		background-color: $heading-color;
+		color: #fff;
+		white-space: nowrap;
+		z-index: 9;
+		-webkit-clip-path: inset(0 100% 0 0);
+		clip-path: inset(0 100% 0 0);
+		top: 7px;
+		left: 11px;
+		position: relative;
+		
+		
+		a:not(:last-child) {
+			&:after {
+				content: '/';
+				margin: 0 2px 0 3px;
+			}
+		}
+	}
+	
+	a {
+		color: #fff;
+	}
+	
+	&.qodef-is-active {
+		visibility: visible;
+		
+		.qodef-follow-info-title,
+		.qodef-follow-info-role {
+			-webkit-clip-path: inset(0 0 0 0);
+			clip-path: inset(0 0 0 0);
+		}
+		
+		.qodef-follow-info-title {
+			transition: .5s cubic-bezier(.165, .84, .44, 1) .25s;
+		}
+		
+		.qodef-follow-info-role {
+			transition: .5s cubic-bezier(.165, .84, .44, 1);
+		}
+	}
+}

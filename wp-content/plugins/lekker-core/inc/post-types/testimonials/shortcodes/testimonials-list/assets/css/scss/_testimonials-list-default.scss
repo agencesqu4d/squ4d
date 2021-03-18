@@ -1,0 +1,110 @@
+/* Testimonials list shortcode style - start */
+.qodef-testimonials-list {
+	text-align: center;
+
+	&.qodef-swiper-container {
+
+		.swiper-wrapper {
+			cursor: grab;
+			transition-timing-function: cubic-bezier(0.48, 0.1, 0, 1);
+
+			.swiper-slide {
+				opacity: 0;
+				transition: .5s;
+
+				.qodef-e-title {
+					transform: translateX(-30px);
+					transition: transform .8s cubic-bezier(0.72, 0.32, 0.12, 0.95);
+				}
+				
+				&.swiper-slide-active, &.swiper-slide-duplicate-active {
+					opacity: 1;
+					transition: .8s;
+
+					.qodef-e-title {
+						transform: translateX(0);
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-e-inner {
+		padding-bottom: 40px;
+		max-width: 980px;
+		margin: 0 auto;
+		
+		@include qodefScreenSize1024 {
+			max-width: 90%;
+		}
+		
+		@include qodefScreenSize680 {
+			max-width: 100%;
+		}
+	}
+	
+	.qodef-e-media-image {
+		line-height: 0;
+		margin-bottom: 25px;
+	}
+	
+	.qodef-e-title {
+		margin: 0 0 18px;
+	}
+	
+	.qodef-e-text {
+		margin: 0 auto 38px;
+		font-size: 19px;
+		
+		@include qodefScreenSize1440 {
+			max-width: 850px;
+		}
+	}
+	
+	.qodef-e-author {
+		margin: 0;
+	}
+	
+	.qodef-e-author-name {
+		font-size: 19px;
+		font-weight: 700;
+	}
+	
+	.qodef-e-author-job {
+		font-size: 19px;
+		margin-left: 2px;
+		
+		&:before {
+			content: '/';
+			left: 0;
+			top: 0;
+		}
+	}
+	
+	.swiper-pagination-bullets {
+		text-align: left;
+		bottom: 0 !important;
+		
+		.swiper-pagination-bullet {
+			&:before {
+				background-color: $main-color;
+			}
+		}
+	}
+	
+	&.qodef-skin--light {
+		.qodef-e-title,
+		.qodef-e-text,
+		.qodef-e-author {
+			color: #fff;
+		}
+		
+		.swiper-pagination-bullet {
+			&:before {
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+/* Testimonials list shortcode style - end */

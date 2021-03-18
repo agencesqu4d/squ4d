@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */
+
+.qodef-instagram-list {
+	
+	#sb_instagram {
+		position: relative;
+
+		&:after {
+			content: "\e09a";
+			font-family: 'ElegantIcons';
+			font-size: 14px;
+			line-height: 60px;
+			color: #1f1f1f;
+			display: inline-block;
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			background-color: #fff;
+			text-align: center;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		#sbi_images {
+			.sbi_photo_wrap {
+				a {
+					background-image: none !important;
+					height: auto !important;
+
+					img {
+						display: inline-block !important;
+					}
+				}
+		}	}
+		&.sbi_fixed_height {
+			overflow-y: hidden;
+			padding: 0;
+		}
+	}
+	
+	@for $i from 0 to length($grid-columns-gutter-label) {
+		&.qodef-gutter--#{nth($grid-columns-gutter-label,$i+1)} {
+			$gutter-size: nth($grid-columns-gutter-size, $i+1);
+			$gutter-double-size: $gutter-size * 2;
+			
+			#sb_instagram {
+				padding-bottom: 0 !important;
+			}
+			
+			&.qodef--no-bottom-space {
+				
+				@if ($gutter-size == 0) {
+					margin-bottom: 0;
+				} @else {
+					margin-bottom: -#{$gutter-double-size}px;
+				}
+			}
+			
+			#sb_instagram:after{
+				top: calc(50% - #{$gutter-double-size}px);
+			}
+			
+			#sb_instagram #sbi_images {
+				float: none;
+				padding: 0 !important;
+				width: auto;
+				
+				&:after{
+					content: '';
+					display: table;
+					clear: both;
+				}
+				@if ($gutter-size == 0) {
+					margin: 0;
+				} @else {
+					margin: 0 -#{$gutter-size}px;
+				}
+				
+				> .sbi_item {
+					
+					@if ($gutter-size == 0) {
+						padding: 0 !important;
+						margin: 0 !important;
+					} @else {
+						padding: 0 #{$gutter-size}px !important;
+						margin: 0 0 #{$gutter-double-size}px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */

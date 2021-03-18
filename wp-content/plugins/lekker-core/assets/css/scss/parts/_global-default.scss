@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+
+.lekker-core-page-inline-style {
+	position: absolute !important;
+	width: 0;
+	height: 0;
+	line-height: 1;
+	display: none;
+}
+
+.qodef-blog.qodef-item-layout--simple .qodef-e {
+
+	.qodef-e-media-image {
+		overflow: hidden;
+		
+		img {
+			clip-path: inset(0);
+			-webkit-clip-path: inset(0);
+			transition: .4s cubic-bezier(0.13, 0.43, 0, 0.94)
+		}
+	}
+	
+	&.qodef-e--isHovered {
+
+		.qodef-e-title-link {
+			color: #333;
+		}
+
+		.qodef-e-media-image {
+			img {
+				clip-path: inset(10px);
+				-webkit-clip-path: inset(10px);
+			}
+		}
+
+		.qodef-button .qodef-m-lines {
+
+			&:before {
+				transform: translateY(3px) rotate(-45deg);
+			}
+
+			&:after {
+				transform: translateY(-3px) rotate(45deg);
+			}
+		}
+	}
+}
+
+.qodef-item-layout--switch-images {
+
+	.qodef-e {
+
+		&.qodef-e--isHovered {
+
+			.qodef-e-title-link {
+				color: #333;
+			}
+	
+			.qodef-button .qodef-m-lines {
+	
+				&:before {
+					transform: translateY(3px) rotate(-45deg);
+				}
+	
+				&:after {
+					transform: translateY(-3px) rotate(45deg);
+				}
+			}
+		}
+	}	
+}
+
+.qodef-layout--masonry.qodef-item-layout--info-on-side {
+	perspective: 3000px;
+	
+	.qodef-e-inner {
+		opacity: 0;
+		transform: rotateX(-50deg);
+		transform-origin: top;
+		transition: transform 1s cubic-bezier(0.7, 0.1, 0, 1);
+
+		&.qodef--isNewPost {
+			transition: opacity .5s, transform 1s cubic-bezier(0.7, 0.1, 0, 1);
+		}
+
+		&.qodef--appear-masonry, .elementor-editor-active & {
+			opacity: 1;
+			transform: rotateX(0);
+		}
+	}
+}
+
+.qodef-layout--masonry.qodef-portfolio-list.qodef-item-layout--image-only {
+	
+	.qodef-e-inner {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: .7s cubic-bezier(0.7, 0.1, 0, 1);
+		backface-visibility: hidden;
+
+		&.qodef--isNewPost {
+			transition: opacity .5s, transform 1s cubic-bezier(0.7, 0.1, 0, 1);
+		}
+
+		&.qodef--appear, &.qodef--appear-masonry, .elementor-editor-active & {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+.qodef-layout--masonry.qodef-hover-animation--fade-in {
+	
+	.qodef-e {
+		overflow: hidden;
+		pointer-events: none;
+
+		.qodef-e-image {
+			opacity: 0;
+			transform: scale(1.1);
+			transition: 0s;
+		}
+
+		.qodef-e-content {
+			opacity: 1;
+			transition: 0s;
+
+			.qodef-e-content-inner {
+
+				>* {
+					visibility: hidden;
+				}
+			}
+		}
+
+		&.qodef--appear-masonry, .elementor-editor-active & {
+
+			.qodef-e-image {
+				opacity: 1;
+				transform: scale(1);
+				transition: opacity .5s, transform 1s;
+			}
+	
+			.qodef-e-content {
+				opacity: 0;
+				transition: .5s .2s;
+			}
+
+			&.qodef--isLoaded {
+				pointer-events: all;
+		
+				.qodef-e-content {
+					transition: .3s;
+	
+					.qodef-e-content-inner {
+		
+						>* {
+							visibility: visible;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.qodef-portfolio-list.qodef-item-layout--info-follow.qodef-swiper-container {
+	
+	@include qodefScreenSize1024 {
+
+		.qodef-e-inner, .qodef-e-image, .qodef-e-media-image, .qodef-e-media-image > a {
+			height: 100%;
+		}
+
+		.qodef-e-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+.qodef-button.wpcf7-submit.qodef-type--filled {
+	@include qodefButtonBordersAnimation(1px, 0px);
+	z-index: 1;
+
+
+}

@@ -1,0 +1,13 @@
+/* Clients list shortcode style - start */
+.qodef-clients-list {
+	.qodef-e {
+		@include qodefRelativeLayout();
+		transform: scale(.7);
+		transition: 1s cubic-bezier(0.12, 0.66, 0.12, 0.88);
+
+		&.qodef--appear, .elementor-editor-active & {
+			transform: scale(1);
+		}
+	}
+}
+/* Clients list shortcode style - end */

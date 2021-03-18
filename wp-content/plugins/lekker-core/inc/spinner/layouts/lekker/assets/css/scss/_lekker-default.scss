@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--lekker {
+		
+		.qodef-m-lekker {
+			@include qodefLekkerSpinner();
+		}
+	}
+}

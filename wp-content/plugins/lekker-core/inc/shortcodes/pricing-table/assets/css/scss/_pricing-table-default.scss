@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Pricing Table shortcode styles
+   ========================================================================== */
+
+.qodef-pricing-table {
+	@include qodefRelativeLayout();
+	text-align: center;
+	
+	&.qodef-status--featured {
+		transform: translateY(-25px);
+	}
+	
+	.qodef-m-inner {
+		padding: 82px 67px;
+		
+		@include qodefScreenSize480 {
+			padding: 82px 50px;
+		}
+	}
+	
+	.qodef-m-title {
+		writing-mode: vertical-lr;
+		text-orientation: mixed;
+		white-space: nowrap;
+		transform: scale(-1);
+		background-color: $main-color;
+		padding: 20px 7px;
+		position: absolute;
+		left: 0;
+		
+		p {
+			font-family: $heading-font;
+			font-size: 13px;
+			font-weight: 600;
+			letter-spacing: -0.02em;
+			margin: 0;
+			color: #fff;
+		}
+	}
+	
+	.qodef-m-price {
+		margin-top: -3px;
+		
+		.qodef-m-price-wrapper {
+			display: flex;
+			margin: 0;
+			line-height: 1;
+			justify-content: flex-start;
+			position: relative;
+			
+			.qodef-m-price-currency {
+				font-size: 32px;
+			}
+			
+			.qodef-m-price-value {
+				margin-left: 2px;
+			}
+			
+			.qodef-m-price-period {
+				font-size: 18px;
+				font-weight: 300;
+				letter-spacing: 0;
+				color: $text-color;
+				position: relative;
+				right: -20px;
+				top: 35px;
+			}
+		}
+	}
+	
+	.qodef-m-button {
+		display: flex;
+		justify-content: flex-start;
+		padding-left: 3px;
+	}
+	
+	.qodef-m-content {
+		margin: 42px 0 0;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		
+		ul {
+			list-style: none;
+			margin: 0;
+			text-align: left;
+			
+			li {
+				font-size: 15px;
+				color: $heading-color;
+				margin-bottom: 5px;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				&:before {
+					content: '\4e';
+					font-family: 'ElegantIcons';
+					font-weight: 400;
+					padding-right: 14px;
+					font-size: 14px;
+					color: $main-color;
+				}
+			}
+		}
+	}
+	
+	.qodef-m-button {
+		
+		.qodef-button {
+			margin: 40px 0 0 0;
+			
+		}
+	}
+}

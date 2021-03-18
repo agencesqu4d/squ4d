@@ -1,0 +1,26 @@
+.widget.qodef-author-info {
+	text-align: center;
+	padding: 50px 40px;
+	background-color: $light-gray-input;
+	
+	@include qodefScreenSize1440 {
+		padding: 38px 28px;
+	}
+	
+	.qodef-author-info-image {
+		margin-bottom: 30px;
+		display: inline-block;
+		
+		img {
+			border-radius: 50%;
+		}
+	}
+	
+	.qodef-author-info-name {
+		margin: 0 0 10px;
+	}
+	
+	.qodef-author-info-description {
+		margin: 0;
+	}
+}

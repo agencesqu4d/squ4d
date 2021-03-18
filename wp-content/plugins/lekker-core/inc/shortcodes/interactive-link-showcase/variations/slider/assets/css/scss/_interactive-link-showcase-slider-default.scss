@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Interactive Link Showcase Slider styles
+   ========================================================================== */
+
+.qodef-interactive-link-showcase {
+	&.qodef-layout--slider {
+		
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+		}
+		
+		.qodef-m-images {
+			@include qodefAbsoluteLayout();
+			height: 100%;
+			overflow: hidden;
+			z-index: 5;
+		}
+		
+		.qodef-m-item {
+			height: auto;
+			margin: 0 5%;
+			
+			.qodef-e-title {
+				opacity: 0;
+			}
+		}
+		
+		&.qodef--init {
+			
+			.qodef-m-item {
+				
+				@for $i from 1 through 10 {
+					
+					&:nth-child(#{$i}) .qodef-e-title {
+						opacity: 1;
+						transition: opacity 1s $i*0.1s;
+					}
+				}
+			}
+		}
+	}
+}

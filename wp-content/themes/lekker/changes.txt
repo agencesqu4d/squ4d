@@ -1,0 +1,5 @@
+1.1
+- Added WordPress 5.5 compatibility
+- Updated Qode Framework plugin to 1.1.3
+- Updated Lekker Core plugin to 1.0.1
+- Updated Revolution Slider plugin to 6.2.22

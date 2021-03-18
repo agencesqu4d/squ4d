@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Interactive Link Showcase List styles
+   ========================================================================== */
+
+.qodef-interactive-link-showcase {
+	&.qodef-layout--list {
+		padding: 90px 0px 45px;
+
+		@include qodefScreenSize1440 {
+			padding: 90px 0px;
+		}
+		@include qodefScreenSize1024 {
+			padding: 0px;
+		}
+		
+		.qodef-m-images {
+			position: relative;
+			display: block;
+			margin-left: auto;
+			width: 60.5%;
+			height: 100%;
+			overflow: hidden;
+
+			@include qodefScreenSize768 {
+				width: 58.5%
+			}
+
+			@include qodefScreenSize680 {
+				display: none;
+			}
+		}
+		
+		.qodef-m-items {
+			@include qodefAbsoluteLayout();
+			left: 10.5%;
+			width: 30%;
+			flex-direction: column;
+			overflow-y: scroll;
+			-ms-overflow-style: none;
+    		scrollbar-width: none;
+			justify-content: center;
+
+			&::-webkit-scrollbar { 
+				display: none;
+			}
+
+			@include qodefScreenSize768 {
+				width: 40%;
+			}
+
+			@include qodefScreenSize680 {
+				width: 100%;
+				left: 0;
+			}
+
+			.qodef-m-item {
+				transform: translateY(20px);
+				transition: opacity .3s, transform 1s cubic-bezier(0.1, 0.7, 0, 1);
+
+				&:first-child {
+					margin-top: 5%;
+
+					@include qodefScreenSize1024 {
+						margin-top: 30%;
+					}
+
+					@include qodefScreenSize768 {
+						margin-top: 28%;
+					}
+				}
+
+				&:last-child {
+					padding-bottom: 36px;
+				}
+
+				&.qodef--appear, .elementor-editor-active & {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}

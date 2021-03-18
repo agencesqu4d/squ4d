@@ -1,0 +1,274 @@
+/* ==========================================================================
+   WooCommerce DropDown Cart styles
+   ========================================================================== */
+
+$wp-widgets-area-map: (
+	'#qodef-page-sidebar': (
+		text-color: null,
+		link-color: null,
+		link-hover-color: null
+	),
+	'#qodef-top-area': (
+		text-color: $text-color,
+		link-color: $text-color,
+		link-hover-color: $main-color,
+	)
+);
+
+.widget_lekker_core_woo_dropdown_cart {
+	height: 100%;
+}
+
+.qodef-woo-dropdown-cart {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+	padding: 0 10px;
+	
+	.qodef-m-inner {
+		@include qodefRelativeLayout();
+		height: 100%;
+	}
+	
+	.qodef-m-opener {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		margin: 0 0 0 10px;
+
+		&:hover {
+			color: inherit;
+		}
+		.qodef-header--light & {
+			color: #fff;
+		}
+		.qodef-m-opener-icon {
+			position: relative;
+			font-size: 15px;
+			font-weight: 600;
+			letter-spacing: -0.03em;
+
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: 2px;
+				left: 0;
+				height: 2px;
+				width: 100%;
+				background: currentColor;
+				z-index: -1;
+				transform-origin: left;
+				transform: scaleX(0);
+				transition: all .3s cubic-bezier(.85, .26, .17, 1);
+			}
+
+			&:hover {
+				&:before {
+					transform: scaleX(1);
+				}
+
+			}
+		}
+		.qodef-m-opener-count {
+			position: relative;
+			top: -4px;
+			font-size: 9px;
+			font-weight: 600;
+		}
+	}
+	
+	.qodef-m-dropdown {
+		position: absolute;
+		top: 100%;
+		left: auto;
+		right: 0;
+		text-align: left;
+		max-height: 0;
+		pointer-events: none;
+		overflow: hidden;
+		will-change: transform;
+		transition: .2s;
+	}
+	
+	.qodef-m-dropdown-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 315px;
+		padding: 28px;
+		background-color: $heading-color;
+
+		.qodef-m-posts-not-found {
+			color: #fff;
+		}
+	}
+	
+	.qodef-woo-dropdown-items {
+		@include qodefRelativeLayout();
+		
+		@each $key, $values in $wp-widgets-area-map {
+			
+			#{$key} & {
+				@if (map-get($values, 'text-color') != null) {
+					color: map-get($values, 'text-color');
+				}
+				
+				@if (map-get($values, 'link-color') != null) {
+					a {
+						color: map-get($values, 'link-color');
+						
+						@if (map-get($values, 'link-hover-color') != null) {
+							&:hover {
+								color: map-get($values, 'link-hover-color');
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-woo-dropdown-item {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		margin-top: 20px;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
+	.qodef-e-image {
+		flex-shrink: 0;
+		width: 63px;
+		margin-right: 20px;
+		
+		a, img {
+			display: block;
+		}
+	}
+	
+	.qodef-e-content {
+		@include qodefRelativeLayout();
+		padding-right: 20px;
+		padding-top: 4px;
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+
+		a {
+			color: #fff;
+
+			&:hover {
+				color: $light-gray-input;
+			}
+		}
+
+	}
+	
+	.qodef-e-price {
+		margin: 3px 0 0;
+		display: inline-block;
+		font-size: 15px;
+		color: #fff;
+	}
+	
+	.qodef-e-quantity {
+		margin: 3px 0 0;
+		display: inline-block;
+		font-size: 15px;
+		color: #fff;
+
+		&:after {
+			content: 'X';
+			display: inline-block;
+			position: relative;
+			padding-left: 3px;
+
+		}
+	}
+	
+	.qodef-e-remove {
+		position: absolute;
+		top: -7px;
+		right: 0;
+		font-size: 15px;
+		line-height: 1;
+		color: #fff;
+
+		&:hover {
+			color: $light-gray-input;
+		}
+	}
+	
+	.qodef-m-order-details {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 18px;
+		margin-top: 28px;
+		border-top: 1px solid #fff;
+
+		.qodef-m-order-label {
+			font-size: 17px;
+			font-weight: 600;
+		}
+		.qodef-m-order-amount {
+			font-size: 15px;
+			font-weight: 300;
+		}
+
+		> * {
+			margin: 0;
+			color: #fff;
+		}
+		
+		@each $key, $values in $wp-widgets-area-map {
+			
+			#{$key} & {
+				@if (map-get($values, 'text-color') != null) {
+					color: map-get($values, 'text-color');
+				}
+			}
+		}
+	}
+	
+	.qodef-m-action {
+		@include qodefRelativeLayout();
+		margin-top: 8px;
+	}
+	
+	.qodef-m-action-link {
+		@include qodefButtonDefaultStyle();
+		@include qodefButtonSize(full-width);
+		color: $heading-color;
+		background-color: #fff;
+		border: 1px solid #fff;
+		
+		&:hover {
+			background-color: #f7f7f7;
+			color: $heading-color;
+		}
+		&:first-child {
+			margin-bottom: 10px;
+		}
+	}
+	
+	.touchevents & {
+		cursor: pointer;
+	}
+	
+	&:hover {
+		
+		.qodef-m-dropdown {
+			max-height: 100vh;
+            pointer-events: auto;
+            transition: .5s cubic-bezier(0.39, -0.02, 0.24, 0.9) .1s;
+		}
+	}
+}

@@ -1,0 +1,95 @@
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+
+#qodef-back-to-top {
+	position: fixed;
+	width: 58px;
+	right: 50px;
+	bottom: 8%;
+	margin: 0;
+	z-index: 10000;
+	opacity: 0;
+	visibility: hidden;
+	transform: rotate(270deg);
+
+	.qodef-btn-background {
+		position: absolute;
+		left: -26px;
+		top: 0;
+		background-color: transparent;
+		width:158px;
+		height: 58px;
+		z-index: -10;
+		transition: all .4s ease-in-out;
+
+
+		&.down {
+
+			.qodef-back-to-top-text {
+				color: #fff;
+
+			}
+			.qodef-m-nav-lines {
+				&:before,
+				&:after {
+					background-color: #fff;
+				}
+			}
+
+		}
+
+		.qodef-m-nav-lines {
+			width: 58px;
+			height: 58px;
+			position: absolute;
+			left: 139px;
+			@include qodefButtonTextualLines($height: 24px, $right: 100%);
+		}
+
+		&:hover {
+			.qodef-m-nav-lines {
+				@include qodefButtonTextualLinesHover($offset: 7px);
+			}
+		}
+	}
+	.qodef-back-to-top-text {
+		position: relative;
+		display: block;
+		width: 158px;
+		height: 58px;
+		font-family: $text-font;
+		color: $heading-color;
+		letter-spacing: -0.02em;
+		line-height: 58px;
+		font-size: 13px;
+		text-align: center;
+		font-weight: 700;
+		overflow: hidden;
+		transition: all .25s ease-in;
+
+	}
+
+	span span {
+		display: block;
+		line-height: inherit;
+	}
+	
+
+	&.qodef--off {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.15s ease, visibility .0s .15s;
+	}
+	
+	&.qodef--on {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.3s ease;
+	}
+}
+
+
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */

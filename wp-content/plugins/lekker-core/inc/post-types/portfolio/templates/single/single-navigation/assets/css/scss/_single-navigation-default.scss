@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-portfolio-navigation {
+	@include qodefRelativeLayout();
+	margin: 80px 0 0;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 20px;
+	}
+	
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		&.qodef--prev {
+			.qodef-m-nav-lines {
+				@include qodefButtonTextualLines($height: 24px, $right: 100%);
+			}
+			
+			&:hover {
+				.qodef-m-nav-lines {
+					@include qodefButtonTextualLinesHover($offset: 7px, $degrees: -45deg);
+				}
+			}
+		}
+		
+		&.qodef--next {
+			text-align: right;
+			
+			.qodef-m-nav-lines {
+				@include qodefButtonTextualLines($height: 24px);
+			}
+			
+			&:hover {
+				.qodef-m-nav-lines {
+					@include qodefButtonTextualLinesHover($offset: 7px);
+				}
+			}
+		}
+		
+		&.qodef--back-link {
+			position: absolute;
+			top: 0;
+			left: calc(50% - 16px); // 16 is half size of icon size
+			
+			.qodef-m-nav-icon {
+				font-size: 32px;
+			}
+		}
+	}
+	
+	.qodef-m-nav-label {
+		@include qodefH7Style();
+		font-size: 13px;
+		padding: 0 20px;
+		top: 5px;
+		position: relative;
+		line-height: 48px;
+	}
+}

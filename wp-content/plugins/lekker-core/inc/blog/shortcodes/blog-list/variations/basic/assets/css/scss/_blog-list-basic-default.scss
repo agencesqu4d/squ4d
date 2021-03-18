@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Blog List basic styles
+   ========================================================================== */
+
+.qodef-blog {
+	position: relative;
+	
+	&.qodef-item-layout--basic {
+		
+		article {
+			margin: 0;
+			
+			.qodef-e-media-image {
+				margin: 0 0 17px;
+			}
+		}
+		
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: absolute;
+			bottom: 29px !important;
+			left: unset !important;
+			top: unset !important;
+			height: 30px !important;
+			width: 30px !important;
+			
+			&:after {
+				font-family: $text-font;
+				background: #fff;
+				color: $text-color;
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 30px;
+				height: 30px;
+				width: 30px;
+				text-align: center;
+			}
+		}
+		
+		.swiper-button-prev {
+			right: 30px !important;
+			
+			&:after {
+				content: '<';
+			}
+		}
+		
+		.swiper-button-next {
+			right: 0 !important;
+			
+			&:after {
+				content: '>';
+			}
+		}
+	}
+}

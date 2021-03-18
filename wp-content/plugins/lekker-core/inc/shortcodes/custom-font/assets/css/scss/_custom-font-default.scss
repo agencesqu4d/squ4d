@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Custom Font shortcode styles
+   ========================================================================== */
+
+.qodef-custom-font {
+	position: relative;
+	margin: 0;
+
+	&.qodef-custom-font-responsive {
+
+		@media (min-width: 1366px) and (max-width: 1680px) {
+			font-size: 215px !important;
+		}
+	}
+}

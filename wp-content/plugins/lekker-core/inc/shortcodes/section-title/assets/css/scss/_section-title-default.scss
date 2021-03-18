@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Section Title shortcode styles
+   ========================================================================== */
+
+.qodef-section-title {
+	@include qodefRelativeLayout();
+	
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+	
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+
+	&.qodef-section-title--animated {
+		
+		.qodef-m-title {
+			margin: 0;
+			transform: translateX(30px);
+		}
+		
+		.qodef-m-text {
+			margin: 18px 0 0;
+		}
+
+		&.qodef--appear, .elementor-editor-active & {
+
+			.qodef-m-title {
+				animation: qodef-animate-section-title-in .8s cubic-bezier(0.7, 0.1, 0, 1) forwards;
+			}
+			
+			@keyframes qodef-animate-section-title-in {
+				0% {
+					transform: translateX(30px);
+				}
+				100% {
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+}

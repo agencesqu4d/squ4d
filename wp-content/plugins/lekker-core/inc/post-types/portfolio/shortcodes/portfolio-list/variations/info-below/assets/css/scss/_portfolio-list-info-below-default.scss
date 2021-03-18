@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-list {
+ 
+	&.qodef-item-layout--info-below {
+		.qodef-e-title {
+
+			a {
+				&:hover {
+					color: $text-color;
+				}
+			}
+		}
+		.qodef-e-content {
+			margin-top: 35px;
+			margin-bottom: 22px;
+
+			.archive & {
+				margin-top: 25px;
+			}
+		}
+		
+		.qodef-e-info-category {
+			@include qodefHeadingStyle(h6);
+			margin-bottom: 7px;
+
+			a {
+				color: #555555;
+
+				&:hover {
+					color: $main-color;
+				}
+			}
+		}
+	}
+}

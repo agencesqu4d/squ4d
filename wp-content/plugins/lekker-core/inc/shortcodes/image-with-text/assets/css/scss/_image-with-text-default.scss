@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+
+	.qodef-m-image-inner-holder {
+		transform: scale(.9);
+		transition: 1s cubic-bezier(0.7, 0.1, 0, 1);
+
+		&.qodef--appear, .elementor-editor-active & {
+			transform: scale(1);
+		}
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		display: inline-block;
+
+		a, img {
+			position: relative;
+			display: block;
+			@include qodefTransition(.33s cubic-bezier(0.18, 0.82, 0.31, 0.96));
+		}
+	}
+	&.qodef-second-image {
+
+		.qodef-m-original-image {
+			opacity: 1;
+		}
+		.qodef-m-hover-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: auto;
+			opacity: 0;
+		}
+		&:hover {
+			.qodef-m-original-image {
+				opacity: 0;
+			}
+			.qodef-m-hover-image {
+				opacity: 1;
+			}
+		}
+	}
+
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+		display: inline-block;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(10px);
+		transition: 1s cubic-bezier(0.7, 0.1, 0, 1);
+
+		&.qodef--appear, .elementor-editor-active & {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
+	.qodef-m-title {
+		margin: 31px 0 0;
+
+		a {
+
+			&:hover {
+				color: $text-color;
+			}
+		}
+	}
+	
+	.qodef-m-text {
+		margin: 15px 0 0;
+	}
+	&.qodef-outline-image {
+		.qodef-m-image {
+			img {
+				outline: 1px solid #f0f0f0;
+			}
+		}
+	}
+
+	&.qodef-image-action--scrolling-image {
+
+		.qodef-m-image-inner-holder {
+			position: relative;
+	
+			.qodef-m-image {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 101%;
+				width: 100%;
+				overflow: hidden;
+				border: 1px solid #f0f0f0;
+				border-radius: 7px 7px 0 0;
+				box-sizing: border-box;
+
+				img {
+					margin-top: 3.3%;
+					outline: none;
+					transition-timing-function: cubic-bezier(0.42, 0.98, 0.18, 0.98);
+				}
+	
+				a {
+					position: relative;
+					display: block;
+				}
+			}
+	
+			.qodef-m-iwt-frame {
+				vertical-align: middle;
+				position: relative;
+				z-index: 12;
+				top: -1px;
+				border-radius: 7px 7px 0 0;
+				width: 100%;
+				pointer-events: none;
+			}
+		}
+
+		&.qodef-scrolling-direction--vertical {
+
+			.qodef-m-image img {
+				width: 100%;
+			}
+		}
+
+		&.qodef-scrolling-direction--horizontal {
+
+			.qodef-m-image {
+
+				a {
+					width: 100%;
+					height: 95%;
+				}
+			}
+
+			.qodef-m-image img {
+				max-width: unset;
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+}
